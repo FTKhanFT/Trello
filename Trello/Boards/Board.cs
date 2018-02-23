@@ -7,7 +7,7 @@ using Trello.Rows;
 
 namespace Trello.Boards
 {
-    class Board : IBoard
+    public class Board : IBoard
     {
         string color,name;
         int id;
@@ -16,6 +16,7 @@ namespace Trello.Boards
         public int ID { get=>id ;}
         public string Color { get=>color; set=>color = value; }
         public string Name { get => name; set => name = value; }
+        public List<Row> Rows { get => rows; set => rows = value; }
 
         public Board(string name,string color)
         {
@@ -27,11 +28,11 @@ namespace Trello.Boards
 
         public List<Row> getRows()
         {
-            return rows;
+            return Rows;
         }
         public void addRow(Rows.Row row)
         {
-            rows.Add(row);
+            Rows.Add(row);
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Trello
 {
-    class RandomID
+    public class RandomID
     {
         private List<int> boardID; 
         private List<int> rowID; 

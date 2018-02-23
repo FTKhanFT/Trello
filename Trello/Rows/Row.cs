@@ -7,7 +7,7 @@ using Trello.Tasks;
 
 namespace Trello.Rows
 {
-    class Row:IRow
+    public class Row:IRow
     {
         string  name;
         int id;
@@ -15,21 +15,22 @@ namespace Trello.Rows
 
         public int ID { get => id; }
         public string Name { get => name; set => name = value; }
+        public List<Tasks.Task> Tasks { get => tasks; set => tasks = value; }
 
         public Row(string name)
         {
-            tasks = new List<Tasks.Task>();
+            Tasks = new List<Tasks.Task>();
             this.id = RandomID.GetInstance().IdForRow();
             this.name = name;
         }
 
         public List<Tasks.Task> getTasks()
         {
-            return tasks;
+            return Tasks;
         }
         public void addTask(Tasks.Task task)
         {
-            tasks.Add(task);
+            Tasks.Add(task);
         }
     }
 }

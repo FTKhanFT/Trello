@@ -26,14 +26,21 @@ namespace Trello
         {
             panel6.AutoScroll = true;
             trello = Trello.GetTrello();
-            string color = "Blue";
-            var board = trello.addBoard("No Name Board", color);
-            id = board.ID;
-            trello.addRow(board, "To Do");
-            trello.addRow(board, "Doing");
-            trello.addRow(board, "Done");
-            DrawRows(board);
-            panel2.BackColor = Color.FromName(color);
+            if (trello.getBoards().Count > 0)
+            {
+                DrawRows(trello.getBoards()[0]);
+            }
+            else
+            {
+                string color = "Blue";
+                var board = trello.addBoard("No Name Board", color);
+                id = board.ID;
+                trello.addRow(board, "To Do");
+                trello.addRow(board, "Doing");
+                trello.addRow(board, "Done");
+                DrawRows(board);
+                panel2.BackColor = Color.FromName(color);
+            }
             panel2.AutoScroll = true;
         }
 
@@ -190,7 +197,7 @@ namespace Trello
                 cardButton.FlatAppearance.BorderSize = 0;
                 cardButton.Width = 209;
                 cardButton.Height = 27;
-                cardButton.Name = item.ID.ToString(); 
+                cardButton.Name = item.ID.ToString();
                 cardButton.BackColor = Color.Transparent;
                 cardButton.Text = "Add a card...";
                 cardButton.TextAlign = ContentAlignment.MiddleLeft;
@@ -213,11 +220,15 @@ namespace Trello
         private void DrawRows(Board board)
         {
             panel2.Controls.Clear();
-            int count = 0, left = 41, top = 46;
+            string color = board.Color;
+            panel2.BackColor = Color.FromName(color);
+            id = board.ID;
+            label2.Text = board.Name;
+            int  left = 41, top = 46;
             foreach (var item in trello.getRowsForBoard(board.ID))
             {
                 Panel panel = new Panel();
-                panel.MaximumSize = new Size(255,472);
+                panel.MaximumSize = new Size(255, 472);
                 panel.AutoScroll = true;
                 panel.BackColor = Color.FromArgb(226, 228, 230);
                 panel.Width = 255;
@@ -377,7 +388,7 @@ namespace Trello
                                 //MessageBox.Show(item.Controls.OfType<Label>().First().Text);
                                 EnterName enterName = new EnterName();
                                 enterName.ShowDialog();
-                                item.Controls.OfType<RichTextBox>().Where(x=>x.Name == stripitem.Name).First().Text = EnterName.name;
+                                item.Controls.OfType<RichTextBox>().Where(x => x.Name == stripitem.Name).First().Text = EnterName.name;
                                 trello.ChangeTaskContent(trello.GetRowById(Convert.ToInt32(item.Name)), EnterName.name, Convert.ToInt32(stripitem.Name));
                             }
                         }
@@ -409,8 +420,8 @@ namespace Trello
                     }
                 }
             }
-            
-            
+
+
         }
 
         private void İtem2_Click(object sender, EventArgs e)
@@ -473,6 +484,11 @@ namespace Trello
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Json.Serializer(trello.getBoards(), @"./datas.json");
         }
     }
 }

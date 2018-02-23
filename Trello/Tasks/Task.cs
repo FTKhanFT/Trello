@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Trello.Tasks
 {
-    class Task:ITask
+    public class Task:ITask
     {
         string name;
         int id;
