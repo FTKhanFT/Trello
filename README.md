@@ -22,3 +22,10 @@ you can click Right mouse button on advanced menu of card.
 
 For drag&drop you just select row which you want to drop the card
 
+![draganddrop](https://user-images.githubusercontent.com/35266212/43570756-26008ece-964c-11e8-838a-c2f2ed7ecc6a.png)
+
+All boards is collocated in list.You can look this list by clicking  left button on boards
+
+# Saving Data
+All datas is saving in json file.NewtonSoft.Json.dll was used to create json file
+
