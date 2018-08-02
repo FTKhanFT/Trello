@@ -5,7 +5,7 @@ Trello tells you what's being worked on, who's working on what and where somethi
 
 This project is simple Trello in desktop. It is written in Windows Form with C#.
 
-# User Guide
+## User Guide
 You just need to download or clone the project. Then you just start Trello.exe
 If you want to change something in the project, you'll need Visual Studio.
 
@@ -26,7 +26,7 @@ For drag&drop you just select row which you want to drop the card.
 
 All boards is collocated in list. You can look this list by clicking  left button on boards.
 
-# Saving Data
+## Saving Data
 All data is saving in json file.
 NewtonSoft.Json.dll was used to create json file.
 
