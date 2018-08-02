@@ -17,3 +17,8 @@ If you want to change boardname,delete board or change background of board you s
 In addition you can create new board , add cards and list.If you click Right mouse button on advanced menu of row you
 will have access to change name of row and delete row.If you want to delete card,change name of card and drag&drop 
 you can click Right mouse button on advanced menu of card.
+
+![advancedmenu](https://user-images.githubusercontent.com/35266212/43570753-2302e050-964c-11e8-8a95-3ee075f092ee.png)
+
+For drag&drop you just select row which you want to drop the card
+
