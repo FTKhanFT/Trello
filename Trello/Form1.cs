@@ -21,7 +21,10 @@ namespace Trello
             {
                 if (subfolder.Contains("Resources"))
                 {
-                    File.Copy(subfolder + "/....png", Directory.GetCurrentDirectory() + "/....png");
+                    if (!File.Exists(Directory.GetCurrentDirectory() + "/....png"))
+                    {
+                         File.Copy(subfolder + "/....png", Directory.GetCurrentDirectory() + "/....png");
+                    }     
                 }
             }
             InitializeComponent();
