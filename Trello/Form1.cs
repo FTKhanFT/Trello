@@ -182,7 +182,7 @@ namespace Trello
                 addbutton.Height = 23;
                 addbutton.FlatStyle = FlatStyle.Flat;
                 addbutton.FlatAppearance.BorderSize = 0;
-                addbutton.BackgroundImage = Image.FromFile(@"C:\Users\hp1\source\repos\Trello\Trello\Resources\....png");
+                addbutton.BackgroundImage = Image.FromFile(@"....png");
                 addbutton.BackgroundImageLayout = ImageLayout.Stretch;
                 addbutton.ContextMenuStrip = new ContextMenuStrip();
                 ToolStripItem item1 = addbutton.ContextMenuStrip.Items.Add("Change Name");
@@ -252,7 +252,7 @@ namespace Trello
                 addbutton.Height = 23;
                 addbutton.FlatStyle = FlatStyle.Flat;
                 addbutton.FlatAppearance.BorderSize = 0;
-                addbutton.BackgroundImage = Image.FromFile(@"C:\Users\hp1\source\repos\Trello\Trello\Resources\....png");
+                addbutton.BackgroundImage = Image.FromFile(@"....png");
                 addbutton.BackgroundImageLayout = ImageLayout.Stretch;
                 addbutton.ContextMenuStrip = new ContextMenuStrip();
                 ToolStripItem item1 = addbutton.ContextMenuStrip.Items.Add("Change Name");
@@ -325,7 +325,7 @@ namespace Trello
                 addbutton.Height = 23;
                 addbutton.FlatStyle = FlatStyle.Flat;
                 addbutton.FlatAppearance.BorderSize = 0;
-                addbutton.BackgroundImage = Image.FromFile(@"C:\Users\hp1\source\repos\Trello\Trello\Resources\....png");
+                addbutton.BackgroundImage = Image.FromFile(@"Resources/....png");
                 addbutton.BackgroundImageLayout = ImageLayout.Stretch;
                 addbutton.ContextMenuStrip = new ContextMenuStrip();
                 ToolStripItem draganddrop = addbutton.ContextMenuStrip.Items.Add("Drag and Drop");
