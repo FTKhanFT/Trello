@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,17 @@ namespace Trello
     {
         public Form1()
         {
+            string[] subdirectoryEntries = Directory.GetDirectories(Directory.GetCurrentDirectory().Split(new string[] { "bin" }, StringSplitOptions.None)[0]);
+            foreach (var subfolder in subdirectoryEntries)
+            {
+                if (subfolder.Contains("Resources"))
+                {
+                    File.Copy(subfolder + "/....png", Directory.GetCurrentDirectory() + "/....png");
+                }
+            }
             InitializeComponent();
+          
+                    
         }
 
         static int id = 0;
@@ -325,7 +336,7 @@ namespace Trello
                 addbutton.Height = 23;
                 addbutton.FlatStyle = FlatStyle.Flat;
                 addbutton.FlatAppearance.BorderSize = 0;
-                addbutton.BackgroundImage = Image.FromFile(@"Resources/....png");
+                addbutton.BackgroundImage = Image.FromFile(@"....png");
                 addbutton.BackgroundImageLayout = ImageLayout.Stretch;
                 addbutton.ContextMenuStrip = new ContextMenuStrip();
                 ToolStripItem draganddrop = addbutton.ContextMenuStrip.Items.Add("Drag and Drop");
