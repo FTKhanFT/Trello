@@ -27,5 +27,6 @@ For drag&drop you just select row which you want to drop the card
 All boards is collocated in list.You can look this list by clicking  left button on boards
 
 # Saving Data
-All datas is saving in json file.NewtonSoft.Json.dll was used to create json file
+All datas is saving in json file.
+NewtonSoft.Json.dll was used to create json file
 
